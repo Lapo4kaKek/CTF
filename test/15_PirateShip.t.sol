@@ -2,7 +2,7 @@
 pragma solidity ^0.8.25;
 
 import "./BaseTest.t.sol";
-import "src/15_PirateShip/PirateShip.sol";
+import "../src/15_PirateShip/PirateShip.sol";
 
 // forge test --match-contract PirateShipTest -vvvv
 contract PirateShipTest is BaseTest {
@@ -17,6 +17,10 @@ contract PirateShipTest is BaseTest {
 
     function testExploitLevel() public {
         /* YOUR EXPLOIT GOES HERE */
+        instance.pullAnchor();
+
+        // Step 2: Set sail by raising the flag
+        instance.sailAway();
 
         checkSuccess();
     }
